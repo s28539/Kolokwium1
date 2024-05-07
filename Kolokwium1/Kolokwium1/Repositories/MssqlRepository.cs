@@ -76,10 +76,10 @@ public class MssqlRepository : IRepository
 
         return authors;
     }
-
+    
     public async Task<Book> AddNewBook(Book book)
     {
-        var insert = @"INSERT INTO book  VALUES(@title;";
+        var insert = @"INSERT INTO book  VALUES(@title);";
         await using SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("Default"));
         await using SqlCommand command = new SqlCommand();
 	    
